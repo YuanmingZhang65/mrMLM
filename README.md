@@ -1,16 +1,17 @@
 # mrMLM
 All the seven multi-locus GWAS methods are available to identify QTNs, including a new BLUPmrMLM method that has fast computational speed (similar to EMMAX and GEMMA), high power and accuracy, and low false positive rate.
 
-Please use the below codes to install the mrMLM software online (2025-12-18):
+Please use the below codes when downloading and installing the mrMLM software (2025-12-18):
 
-options(timeout = 600)
+options(timeout = 600)   # To stop after 600 seconds #
 
-download.file("https://cdn.jsdelivr.net/gh/YuanmingZhang65/mrMLM@main/mrMLM_5.1.1.zip","mrMLM_5.1.1.zip", mode = "wb")
+download.file("https://github.com/YuanmingZhang65/mrMLM/raw/main/mrMLM_5.1.1.zip", "mrMLM_5.1.1.zip", mode = "wb")        # The 1st method for downloading software #
 
-install.packages("mrMLM_5.1.1.zip",repos = NULL)
+download.file("https://cdn.jsdelivr.net/gh/YuanmingZhang65/mrMLM@main/mrMLM_5.1.1.zip", "mrMLM_5.1.1.zip", mode = "wb")   # The 2nd method for downloading software #
 
-library(mrMLM)
+install.packages("mrMLM_5.1.1.zip",repos = NULL)     # To install software #
 
+library(mrMLM)     # To import the software #
 
 
 Conduct multi-locus genome-wide association study under the framework of multi-locus random-SNP-effect mixed linear model (mrMLM). First, each marker on the genome is scanned for the first six methods, while vectorized Wald tests, along with optimal variable selection, are conducted for identifying potentially associated markers for BLUPmrMLM. Bonferroni correction is replaced by a less stringent selection criterion for significant test. Then, all the markers that are potentially associated with the trait are included in a multi-locus genetic model, their effects are estimated by empirical Bayes, and all the nonzero effects were further identified by likelihood ratio test for significant QTL. The program may run on a desktop or laptop computers. If marker genotypes in association mapping population are almost homozygous, these methods in this software are very effective. If there are many heterozygous marker genotypes, the IIIVmrMLM software is recommended. Wen YJ, Zhang H, Ni YL, Huang B, Zhang J, Feng JY, Wang SB, Dunwell JM, Zhang YM, Wu R. Methodological implementation of mixed linear models in multi-locus genome-wide association studies. Brief Bioinform 2018, 19(4): 700-712. doi:10.1093/bib/bbw145; Li M, Zhang YW, Zhang ZC, Xiang Y, Liu MH, Zhou YH, Zuo JF, Zhang HQ, Chen Y, Zhang YM. A compressed variance component mixed model for detecting QTNs and QTN-by-environment and QTN-by-QTN interactions in genome-wide association studies. Mol Plant 2022, 15(4): 630-650. doi:10.1016/j.molp.2022.02.012; Li HF, Wang JT, Zhao Q, Zhang YM. BLUPmrMLM: A fast mrMLM algorithm in genome-wide association studies. Genomics, Proteomics & Bioinformatics 2024, qzae020, doi: 10.1093/gpbjnl/qzae020.
